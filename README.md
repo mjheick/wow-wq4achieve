@@ -1,6 +1,8 @@
 # wow-wq4achieve
 A World of Warcraft weakaura to help track achievements that are dependent on world quests.
 
+Created and tested on 9.1.5
+
 # Credits
 This was inspired by the [Korthia Checklist](https://wago.io/cyRj6ikQz) and modified to allow tracking achivements and quests.
 
