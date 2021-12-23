@@ -3,6 +3,8 @@ A World of Warcraft weakaura to help track achievements that are dependent on wo
 
 Created and tested on 9.1.5
 
+Hosted at [wago.io](https://wago.io/VnWfPX0un)
+
 # Credits
 This was inspired by the [Korthia Checklist](https://wago.io/cyRj6ikQz) and modified to allow tracking achivements and quests.
 
