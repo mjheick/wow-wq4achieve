@@ -23,8 +23,11 @@ local objectives = {
     {expansion="SL", name="Tea for the Troubled", achievement=15042, quests={64554,63822}},
     {expansion="SL", name="Wings Against the Flames", achievement=15034, quest=63824},
     {expansion="SL", name="The Zovaal Shuffle", achievement=15041, quest=63824},
+    {expansion="SL", name="A Sly Fox", achievement=15004, quest=63824},
     {expansion="SL", name="Up For Grabs", achievement=15039, quest=63543},
     {expansion="SL", name="This Army", achievement=15037, quest=63543},
+    {expansion="SL", name="Harvester of Sorrow", achievement=14626, quest=57205},
+    {expansion="SL", name="Tea Tales", achievement=14233, quests={59848,59850,59852,59853}},
 }
 
 -- this tell us if we need to do this achievement
@@ -49,13 +52,56 @@ local needs_achieving = function(objective)
             if v == nil then
                 -- do nothing
             else
-                
                 return true
             end
         end
         return false
     end
     return true
+end
+
+local sec_to_hms = function(t)
+    local d, h, m, s, st
+    d = 0
+    h = 0
+    m = 0
+    s = 0
+    st = ""
+    if t >= 86400 then
+        while t >= 86400 do
+            t = t - 86400
+            d = d + 1
+        end
+        st = d .. "d"
+    end
+    if t >= 3600 then
+        while t >= 3600 do
+            t = t - 3600
+            h = h + 1
+        end
+        if string.len(st) > 0 then
+            st = st .. ", "
+        end
+        st = st .. h .. "h"
+    end
+    if t >= 60 then
+        while t >= 60 do
+            t = t - 60
+            m = m + 1
+        end
+        if string.len(st) > 0 then
+            st = st .. ", "
+        end
+        st = st .. m .. "m"
+    end
+    s = t
+    if s > 0 then
+        if string.len(st) > 0 then
+            st = st .. ", "
+        end
+        st = st .. s .. "s"
+    end
+    return st
 end
 
 aura_env.update_display = function()
@@ -78,12 +124,12 @@ aura_env.update_display = function()
                     else
                         v = r
                     end
-                end                
+                end
             end
-            aura_env.text = aura_env.text .. " (" .. tostring(v) .. "s)"
+            aura_env.text = aura_env.text .. " (" .. tostring(sec_to_hms(v)) .. ")"
             aura_env.text = aura_env.text .. "\n"
-        end        
-    end    
+        end
+    end
 end
 
 aura_env.update_display()
