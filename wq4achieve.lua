@@ -1,4 +1,9 @@
 local objectives = {
+    {expansion="LEG", name="Boxing Match", achievement=11475, quest=54516},
+    {expansion="LEG", name="Mission Accomplished", achievement=11475, quest=41896},
+    {expansion="LEG", name="Saddle Sore", achievement=11476, quest=42025},
+    {expansion="LEG", name="Off the Top Rook", achievement=11477, quest=42023},    
+    {expansion="LEG", name="The Darkbrul-oh", achievement=11478, quest=41013},
     {expansion="BFA", name="Doomsoul Surprise", achievement=13435, quest=54689},
     {expansion="BFA", name="Bless the Rains Down in Freehold", achievement=13050, quests={52159,53196}},
     {expansion="BFA", name="Sabertron Assemble", achievement=13054, quests={51978,51976,51947,51977,51974}},
@@ -6,6 +11,7 @@ local objectives = {
     {expansion="BFA", name="Revenge is Best Served Speedily", achievement=13022, quest=50786},
     {expansion="BFA", name="A Most Efficient Apocalypse", achievement=13021, quest=50665},
     {expansion="BFA", name="Hungry, Hungry Ranishu", achievement=13041, quests={51991,52798}},
+    {expansion="BFA", name="Adept Sandfisher", achievement=13009, quest=51173},
     {expansion="SL", name="Flight School Graduate", achievement=14735, quest=60858},
     {expansion="SL", name="What Bastion Remembered", achievement=14737, quests={59717,59705}},
     {expansion="SL", name="Something's Not Quite Right....", achievement=14671, quest=60739},
@@ -15,8 +21,8 @@ local objectives = {
     {expansion="SL", name="Ramparts Racer", achievement=14765, quest=59643},
     {expansion="SL", name="Parasoling", achievement=14766, quest=59718},
     {expansion="SL", name="Friend of Ooz", achievement=15055, quest=64016},
-    {expansion="SL", name="Friend of Bloop", achievement=15055, quest=64017},
-    {expansion="SL", name="Friend of Plaguey", achievement=15055, quest=63989},
+    {expansion="SL", name="Friend of Bloop", achievement=15056, quest=64017},
+    {expansion="SL", name="Friend of Plaguey", achievement=15057, quest=63989},
     {expansion="SL", name="Krrprripripkraak's Heroes", achievement=15044, quest=63823},
     {expansion="SL", name="Rooting Out the Evil", achievement=15036, quest=63823},
     {expansion="SL", name="Jailer's Personal Stash", achievement=15001, quest=63823},
@@ -28,6 +34,10 @@ local objectives = {
     {expansion="SL", name="This Army", achievement=15037, quest=63543},
     {expansion="SL", name="Harvester of Sorrow", achievement=14626, quest=57205},
     {expansion="SL", name="Tea Tales", achievement=14233, quests={59848,59850,59852,59853}},
+    {expansion="SL", name="Frog'it (Zereth Mortis)", achievement=15331, quest=65089},
+    {expansion="SL", name="Annelid-ilation (for Helmix Rare)", achievement=15391, quest=65232},
+    {expansion="SL", name="Impressing Zo'Sorg", achievement=14516, quests={59658,59825,59803,60231}},
+    {expansion="DF", name="A Champion's Tour: Dragon Isles", achievement=16590, quests={67005,70439,70209,69949}},
 }
 
 -- this tell us if we need to do this achievement
@@ -122,6 +132,8 @@ aura_env.update_display = function()
                     if r == nil then
                         -- do nothing
                     else
+                        -- show which quest we care about for cross reference
+                        aura_env.text = aura_env.text .. " [" .. q .. "]"
                         v = r
                     end
                 end
