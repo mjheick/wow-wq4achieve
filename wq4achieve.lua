@@ -1,5 +1,5 @@
 local objectives = {
-    {expansion="LEG", name="Boxing Match", achievement=11475, quest=54516},
+    {expansion="LEG", name="Boxing Match", achievement=13438, quest=54516},
     {expansion="LEG", name="Mission Accomplished", achievement=11475, quest=41896},
     {expansion="LEG", name="Saddle Sore", achievement=11476, quest=42025},
     {expansion="LEG", name="Off the Top Rook", achievement=11477, quest=42023},    
